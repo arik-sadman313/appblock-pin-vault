@@ -67,7 +67,7 @@ class _RevealScreenState extends ConsumerState<RevealScreen> with WidgetsBinding
 
     final pin = await NativeSecurityService.decryptPin();
     
-    if (!context.mounted) return;
+    if (!mounted) return;
 
     if (pin != null) {
       setState(() {

@@ -50,7 +50,9 @@ class _ChallengeScreenState extends ConsumerState<ChallengeScreen> {
                 return RadioListTile<String>(
                   title: Text(reason),
                   value: reason,
+                  // ignore: deprecated_member_use
                   groupValue: _selectedReason,
+                  // ignore: deprecated_member_use
                   onChanged: (value) {
                     setState(() {
                       _selectedReason = value;
