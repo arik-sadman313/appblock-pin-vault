@@ -8,21 +8,52 @@ The application is completely offline and does not require an account, server, c
 
 ---
 
-# Why This Exists
+# Purpose
 
-AppBlock supports a numeric PIN for protecting blocked applications and websites.
+AppBlock PIN Vault was created to solve a simple problem:
 
-For someone trying to use AppBlock as a self-control mechanism, simply knowing the PIN creates an easy way to bypass the restrictions during an impulsive moment.
+**How can someone use AppBlock to enforce their own app and website restrictions without keeping the AppBlock PIN readily accessible to themselves?**
 
-AppBlock PIN Vault addresses this by separating:
+AppBlock uses a PIN to protect its blocking configuration. If the user knows that PIN, they can disable or modify their restrictions whenever they feel like bypassing them.
 
-AppBlock
-→ enforces the restriction
+This application creates a separate vault for that PIN.
 
-PIN Vault
-→ stores the credential and makes deliberate retrieval difficult
+Instead of choosing and memorizing an easy PIN, the user can:
 
-The user can therefore configure AppBlock with a randomly generated PIN without needing to memorize it.
+1. Generate a random 8-digit PIN.
+2. Configure AppBlock with that PIN.
+3. Store the PIN securely inside the vault.
+4. Lock the vault.
+5. Continue using AppBlock without knowing the PIN.
+6. If access to the PIN is genuinely necessary, initiate recovery.
+7. Wait through a deliberate recovery period.
+8. Complete the recovery confirmation.
+9. Explicitly reveal the PIN.
+10. Optionally generate and configure a new PIN afterward.
+
+The purpose is **not to make the Android device impossible for its owner to bypass**. That is not a realistic security boundary for an application running on a device the owner controls.
+
+The purpose is to introduce a deliberate separation between:
+
+```text
+Wanting to bypass a restriction
+             ↓
+      Immediate access
+             ✗
+             │
+             ▼
+       Recovery request
+             ↓
+        Waiting period
+             ↓
+      Deliberate confirmation
+             ↓
+        Explicit reveal
+```
+
+This makes the decision to retrieve the AppBlock PIN **intentional rather than instantaneous**.
+
+The application is therefore best understood as a **self-control utility built around secure credential storage and delayed recovery**, rather than as a replacement for AppBlock itself.
 
 ---
 
